@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Serato Studio Merger</title>
+    <script defer="true" src="ReplaceDecks.js"></script>
+    <link href="ReplaceDecks.css" rel="stylesheet" type="text/css"/>
+    <meta char="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <h1>Replace Decks</h1>
+    <div class="menu">
+        <button id="undoButton">undo</button>
+        <button id="resetButton">reset</button>
+        <button id="helpButton">help</button>
+    </div>
+    <div class='gird'>
+        <!-- If you wish to remove the container div also remember to modify dragDrop() and dragStart() in ReplaceSamples.js -->
+        <div id="container_1">
+            <div class="projectName"></div>
+            <div class="uploadButton" id="uploadButton_1">
+                +
+                <p>Upload your base .ssp file</p>
+                <input type="file" accept=".ssp, .zip" id="readFileButton_1"/>
+            </div>
+            <div class="deckLayout" id="deckLayout_1"></div>
+        </div>
+        <div id="container_2">
+            <div class="projectName"></div>
+            <div class="uploadButton" id="uploadButton_2">
+                +
+                <p>Upload another .ssp file</p>
+                <input type="file" accept=".ssp, .zip" id="readFileButton_2"/>
+            </div>
+            <div class="deckLayout" id="deckLayout_2"></div>
+        </div>
+    </div>
+    <div class="center"><div id="mergeButton">Merge</div></div>
+    
+    <div id="helpWindow">
+        <img src="ReplaceDecksGuide.gif" alt="replace decks guide">
+    </div>
+    <footer>by Sarah Hao</footer>
+</body>
+
+
+</html>

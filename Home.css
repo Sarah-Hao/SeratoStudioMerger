@@ -1,0 +1,59 @@
+body {
+    padding: 0 20%;
+    background-color: rgb(167, 80, 249);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+    filter: brightness(0.9);
+    color: rgb(254, 254, 254);
+}
+
+h1 {
+    padding: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    display: block;
+    color: white;
+    text-decoration-style: wavy;
+}
+
+footer {
+    text-align: center;
+    font-size: 10px;
+    color: rgb(206, 185, 226);
+    padding: 50px;
+}
+
+.gird {
+    display: grid;
+    align-items: baseline;
+    grid-template-columns: auto auto;
+    grid-gap: 50px;
+    text-align: center;
+    justify-items: center;
+}
+
+
+.button {
+    width: 200px;
+    height: 50px;
+	box-shadow:inset 0px 0px 15px 3px rgb(60, 22, 96);
+	background-color:rgb(102, 32, 168);
+	border-radius:17px;
+	border:1px solid #1f2f47;
+	display:inline-block;
+	cursor:pointer;
+	color: rgb(230, 220, 241);
+	font-size:20px;
+    text-align: center;
+	padding:100px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #263666;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.button:hover {
+	background-color: rgb(30, 8, 51);
+}
+.button:activate {
+	position:relative;
+	top:1px;
+}

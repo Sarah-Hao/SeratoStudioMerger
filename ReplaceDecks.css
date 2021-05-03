@@ -1,0 +1,226 @@
+body {
+    padding: 0 20%;
+    background-color: rgb(167, 80, 249);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+    filter: brightness(0.9);
+    color: rgb(254, 254, 254);
+}
+
+h1 {
+    padding: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    display: block;
+    color: white;
+    text-decoration-style: wavy;
+}
+
+footer {
+    text-align: center;
+    font-size: 10px;
+    color: rgb(206, 185, 226);
+    padding: 50px;
+}
+
+.gird {
+    display: grid;
+    align-items: baseline;
+    grid-template-columns: auto auto;
+    grid-gap: 50px;
+    text-align: center;
+    justify-items: center;
+}
+
+
+.button {
+    width: 200px;
+    height: 50px;
+	box-shadow:inset 0px 0px 15px 3px rgb(60, 22, 96);
+	background-color:rgb(102, 32, 168);
+	border-radius:17px;
+	border:1px solid #1f2f47;
+	display:inline-block;
+	cursor:pointer;
+	color: rgb(230, 220, 241);
+	font-size:20px;
+    text-align: center;
+	padding:100px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #263666;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.button:hover {
+	background-color: rgb(30, 8, 51);
+}
+.button:activate {
+	position:relative;
+	top:1px;
+}
+
+
+
+.menu {
+    display: flexbox;
+    width: 100%;
+    padding: 10px;
+}
+
+.menu button {
+    height: 100%;
+    width: 50px;
+    background-color: rgba(0,0,0,0);
+    font-size: 15x;
+    border: 0px solid blueviolet;
+    color: rgb(254, 254, 254);
+    cursor: pointer;
+}
+
+.menu button:hover {
+    background-color: rgb(30, 8, 51);
+}
+
+.menu button:active {
+    position: relative;
+    top: 1px;
+}
+
+.projectName {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.uploadButton {
+    width: 200px;
+	box-shadow:inset 0px 0px 15px 3px rgb(60, 22, 96);
+	background-color:rgb(102, 32, 168);
+	border-radius:17px;
+	border:1px solid #1f2f47;
+	display:inline-block;
+	cursor:pointer;
+	color: rgb(205, 166, 242);
+	font-size:100px;
+    text-align: center;
+	padding:100px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #263666;
+}
+
+.uploadButton p {
+    font-size: 15px;
+    white-space: nowrap;
+}
+.uploadButton input {
+    display: none;
+}
+.uploadButton:hover {
+	background-color: rgb(30, 8, 51);
+}
+.uploadButton:activate {
+	position:relative;
+	top:1px;
+}
+.uploadButton__input {
+    display: none;
+}
+
+.deckLayout {
+    width: 400px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 10px;
+}
+
+.deckArea {
+    display: inline-block;
+    height: 40px;
+    width: 400px;
+    background-color: blueviolet;
+    box-shadow: inset 0px 0px 5px 3px rgb(148, 65, 226);
+    border-radius: 10px;
+    align-items: center;
+}
+
+.deck {
+    display: table-cell;
+    border-radius: 10px;
+    height: 40px;
+    width: 400px;
+    position: relative;
+    top: 5px;
+    left: 5px;
+    background-color: gray;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    font-size: 12px;
+    color:black;
+    text-decoration-style: solid;
+}
+
+.deck:hover {
+    filter: brightness(1.5);
+}
+
+.invisible {
+    display: none;
+}
+
+.center {
+    display: flex;
+    padding-top: 30px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#mergeButton {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	box-shadow:inset 0px 0px 15px 3px rgb(60, 22, 96);
+	background-color:rgb(102, 32, 168);
+	border-radius:17px;
+	border:1px solid #1f2f47;
+	display:inline-block;
+	cursor:pointer;
+	color: rgb(242, 228, 255);
+	font-size:20px;
+    text-align: center;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #263666;
+    opacity: 0.2;
+}
+
+#mergeButton:hover {
+    background-color: rgb(30, 8, 51);
+}
+
+#mergeButton:activate {
+	position:relative;
+	top:1px;
+}
+
+#undoButton {
+    opacity: 0.5;;
+}
+
+#resetButton {
+    opacity: 0.5;;
+}
+
+#helpWindow {
+    visibility: hidden;
+}
+
+#helpWindow img{
+    height: 200px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
