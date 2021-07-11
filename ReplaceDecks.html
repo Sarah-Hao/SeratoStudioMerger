@@ -9,41 +9,77 @@
 </head>
 
 <body>
-
-    <h1>Replace Decks</h1>
-    <div class="menu">
-        <button id="undoButton">undo</button>
-        <button id="resetButton">reset</button>
-        <button id="helpButton">help</button>
-    </div>
-    <div class='gird'>
-        <!-- If you wish to remove the container div also remember to modify dragDrop() and dragStart() in ReplaceSamples.js -->
-        <div id="container_1">
-            <div class="projectName"></div>
-            <div class="uploadButton" id="uploadButton_1">
-                +
-                <p>Upload your base .ssp file</p>
-                <input type="file" accept=".ssp, .zip" id="readFileButton_1"/>
-            </div>
-            <div class="deckLayout" id="deckLayout_1"></div>
-        </div>
-        <div id="container_2">
-            <div class="projectName"></div>
-            <div class="uploadButton" id="uploadButton_2">
-                +
-                <p>Upload another .ssp file</p>
-                <input type="file" accept=".ssp, .zip" id="readFileButton_2"/>
-            </div>
-            <div class="deckLayout" id="deckLayout_2"></div>
-        </div>
-    </div>
-    <div class="center"><div id="mergeButton">Merge</div></div>
+    <!-- background -->
+    <img src="images/mars.png" alt="" class="mars">
     
-    <div id="helpWindow">
-        <img src="ReplaceDecksGuide.gif" alt="replace decks guide">
+    <!-- main components -->
+    <div class="scrollableArea">
+        <div class='grid'>
+            <!-- If you wish to remove the container div also remember to modify dragDrop() and dragStart() in ReplaceSamples.js -->
+            <div class="container" id="container_0">
+                <div class="projectName"></div>
+                <div class="uploadButton" id="uploadButton_0">
+                    <div class="plus">+</div>
+                    <div class="text">Base project</div>
+                    <input type="file" accept=".ssp" id="readFileButton_0"/>
+                </div>
+                <div class="deckLayout" id="deckLayout_0">
+                </div>
+            </div>
+            <div class="container" id="container_1">
+                <div class="projectName"></div>
+                <div class="uploadButton" id="uploadButton_1">
+                    <div class="plus">+</div>
+                    <div class="text"></div>
+                    <input type="file" accept=".ssp" id="readFileButton_1"/>
+                </div>
+                <div class="deckLayout" id="deckLayout_1">
+                </div>
+            </div>
+            <div id="uploadMoreButton">
+                Upload more
+                <input type="file" accept=".ssp, .zip" id="readFileButton_more"/>
+            </div>
+            <div id="mergeButton">Merge</div>
+        </div>
     </div>
-    <footer>by Sarah Hao</footer>
+        
+
+    <!-- graphics -->
+    <div class="leftTorch"></div>
+    <div class="rightTorch"></div>
+
+    <!-- top menu -->
+    <div class="topbar">
+        <h1 class="title">Replace Deck Samples</h1>
+        <div class="menu">
+            <button id="undoButton">undo</button>
+            <button id="resetButton">reset</button>
+            <button id="guideButton">guide</button>
+            <a id="homeButton" href="Home.html">home</a>
+        </div>
+    </div>
+        
+    <!-- hidden guide window -->
+    <div id="guideWindow">
+        <img src="ReplaceDecksGuide.gif" alt="A guide GIF">
+        <button id="closeGuideButton"> x </button>
+    </div>
+
+    <!-- hidden templates used by js -->
+    <div class="deckArea" id='deckArea_template' style='display:none;'>
+        <div class="deck">
+            <div class="outer"></div>
+            <div class="inner"></div>
+        </div>
+        <div class="line"></div>
+        <div class="name">deck name place hoder</div>
+        <img class="icon" src='images/drums.svg' alt=''>
+    </div>
+
+    <div class="container" id="container_template" style='display:none;'>
+        <div class="projectName"></div>
+        <div class="deckLayout"></div>
+    </div>
 </body>
-
-
 </html>

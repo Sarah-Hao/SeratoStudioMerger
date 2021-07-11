@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<!-- saved from url=(0092)file:///Users/sarahhao/MEGAsync/Code/VS%20Projects/Setato_studio_merger/Test_DragnDrop2.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Drag and Drop Test</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,700;1,600;1,700;1,900&display=swap');
+
+        body {
+            background-color: rgb(0, 0, 0);
+        }
+
+        .deckLayout {
+            /* deckLayout */
+
+
+            /* Auto Layout */
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+
+            position: absolute;
+            width: 540px;
+            height: 290.6px;
+            left: 154px;
+            top: 35px;
+
+        }
+
+        .deckArea {
+            /* deckArea */
+
+
+            position: absolute;
+            width: 320px;
+            height: 65px;
+            left: 158px;
+            top: 167px;
+        }
+
+        .line {
+            /* line */
+
+
+            /* Auto Layout */
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 0px 25px 15px 0px;
+
+            position: relative;
+            left: 0%;
+            right: 0%;
+            top: 0%;
+            bottom: 0%;
+        }
+
+        .lineRight {
+            /* lineRight */
+
+
+            position: static;
+            width: 212.65px;
+            height: 75.2px;
+            left: 282.35px;
+            top: 0px;
+
+
+            /* Inside Auto Layout */
+
+            flex: none;
+            order: 2;
+            align-self: stretch;
+            flex-grow: 1;
+            margin: 0px 0px;
+
+        }
+
+        .lineSvg {
+            /* lineSvg */
+
+
+            position: static;
+            width: 69.7px;
+            height: 27.03px;
+            left: 212.65px;
+            top: 48.17px;
+
+
+            /* Inside Auto Layout */
+
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+            margin: 0px 0px;
+
+        }
+
+        .lineLeft {
+            /* lineLeft */
+
+
+            position: static;
+            width: 212.65px;
+            height: 75.2px;
+            left: 0px;
+            top: 0px;
+
+
+            /* Inside Auto Layout */
+
+            flex: none;
+            order: 0;
+            align-self: stretch;
+            flex-grow: 1;
+            margin: 0px 0px;
+
+        }
+
+        .deck {
+            /* deck */
+
+
+            /* Auto Layout */
+
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: flex-end;
+            padding: 5px 5px 0px 20px;
+
+            position: relative;
+            left: 0%;
+            right: 0%;
+            top: 0%;
+            bottom: 0%;
+        }
+
+        .deckIcon {
+            /* deckIcon */
+
+
+            position: static;
+            width: 24px;
+            height: 24px;
+            left: 491px;
+            top: 66.2px;
+
+
+            /* Inside Auto Layout */
+
+            flex: none;
+            order: 2;
+            flex-grow: 0;
+            margin: 5px 0px;
+
+            /* background:red; */
+        }
+
+        .icon {
+            /* icon */
+
+
+            position: relative;
+            left: 0%;
+            right: 0%;
+            top: 0%;
+            bottom: 0%;
+        }
+
+        .deckGraphic {
+            /* deckGraphic */
+
+
+            position: static;
+            width: 106.5px;
+            height: 29px;
+            left: 136.5px;
+            top: 61.2px;
+
+
+            /* Inside Auto Layout */
+
+            flex: none;
+            order: 1;
+            flex-grow: 1;
+            margin: 0px 10px;
+        }
+
+
+        .inner {
+            /* inner */
+
+
+            position: absolute;
+            left: 53.47%;
+            right: 12.05%;
+            top: 82.26%;
+            bottom: 13.3%;
+
+            /* blue */
+
+            background: #287BF7;
+            /* blue shadows */
+
+            box-shadow: 0px 4px 20px #0F294E, 0px -4px 20px #287BF6;
+            border-radius: 30px;
+        }
+
+
+        .outer {
+            /* outer */
+
+
+            position: absolute;
+            width: 225.5px;
+            left: calc(50% - 225.5px/2 + 108.25px);
+            top: 67.85%;
+            bottom: 0%;
+
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(254, 254, 254, 0.126) 19.79%, rgba(252, 252, 252, 0.204) 37.5%, rgba(255, 255, 255, 0) 45.31%), linear-gradient(120.86deg, rgba(255, 255, 255, 0.082) 33.88%, rgba(12, 12, 12, 0) 68.7%), linear-gradient(180deg, rgba(196, 196, 196, 0.2) 0%, rgba(196, 196, 196, 0) 100%);
+            border-radius: 30px;
+        }
+
+
+        .deckName {
+            /* deckName */
+
+
+            position: static;
+            width: 225.5px;
+            height: 85.2px;
+            left: calc(50% - 225.5px/2 - 127.25px);
+            top: calc(50% - 85.2px/2 + 2.5px);
+
+            font-family: Source Code Pro;
+            font-style: normal;
+            font-weight: light;
+            font-size: 7px;
+            line-height: 15px;
+
+            color: rgba(255, 255, 255, 0.37);
+
+
+            /* Inside Auto Layout */
+
+            flex: none;
+            order: 0;
+            align-self: stretch;
+            flex-grow: 1;
+            margin: 0px 10px;
+        }
+
+        .deck:hover {
+            
+            filter: brightness(1.5);
+        }
+    </style>
+    <meta char="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="deckLayout">
+        <div class="deckArea">
+            <div class="line">
+                <div class="lineRight"></div>
+                <svg class="lineSvg" width="71" height="28" viewBox="0 0 71 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.651123 1.69371L25.8935 25.6937L26.0383 25.8314H26.2381H64.1679C64.5895 27.0919 65.7771 28.0001 67.1763 28.0001C68.9284 28.0001 70.3487 26.576 70.3487 24.8193C70.3487 23.0627 68.9284 21.6386 67.1763 21.6386C65.4242 21.6386 64.0039 23.0627 64.0039 24.8193C64.0039 24.8233 64.0039 24.8273 64.0039 24.8314H26.4378L1.34017 0.968994L0.651123 1.69371Z" fill="white" fill-opacity="0.37"></path></svg>
+                <div class="lineLeft"></div>
+            </div>
+            <div class="deck">
+                <div class="deckIcon"><img src="./Drag and Drop Test_files/sample.svg" alt="" class="icon"></div>
+                <div class="deckGraphic">
+                    <div class="outer"></div>
+                    <div class="inner"></div>
+                </div>
+                <div class="deckName">Deck Name Place Hoder overflow overflow....</div>
+            </div>
+        </div>
+    </div>
+    <div class="deckLayout">
+    </div>
+
+
+
+
+<script>
+    function drawDecks(container, nameList, typeList, base=false){
+        for (let i = 0 ; i < nameList.length; i++) {
+            console.log(i);
+            deckName = nameList[i];
+            deckType = typeList[i];
+
+            // create a deckArea container
+            let deckArea = document.createElement('div');
+            deckArea.className = "deckArea";
+
+            // create a deck
+            let deck = document.createElement('div');
+            deck.className = "deck";
+            deck.innerText = deckName;
+            if (typeList[i] == 'drums') {
+                deck.style = "background-color: rgb(167, 0, 0);";
+            } else if (typeList[i] == 'instrument') {
+                deck.style = "background-color: rgb(2, 83, 222);";
+            } else if (typeList[i] == 'sample') {
+                deck.style = "background-color: rgb(132, 197, 34);";
+            } else if (typeList[i] == 'plugin'){
+                pass;
+            }
+            deck.draggable = (base) ? "false" : "true";
+            
+            // Draw
+            deckArea.append(deck);
+            container.append(deckArea);
+        }
+    };
+
+
+    const a = ['A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C'];
+    const b = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+    const a_type = ['drums', 'instrument', 'sample', 'drums', 'instrument', 'sample', 'drums', 'instrument', 'sample'];
+    const b_type = ['drums', 'instrument', 'sample', 'drums', 'instrument', 'sample', 'drums'];
+
+
+    const a_change = [0, 0, 0];
+    const deckLayout_1 = document.getElementById("deckLayout_1");
+    const deckLayout_2 = document.getElementById("deckLayout_2");
+
+    // drawDecks(deckLayout_1, a, a_type, base=true);
+    // drawDecks(deckLayout_2, b, b_type);
+    // console.log(deckLayout_1);
+    
+    
+</script></body></html>
