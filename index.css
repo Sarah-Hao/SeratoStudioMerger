@@ -2,15 +2,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 body {
-    padding: 0 20%;
-    background-color: rgb(0,0,0);
-    font-family: Roboto;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    filter: brightness(0.9);
+
+    font-family: Roboto;
     color: rgb(254, 254, 254);
+    overflow: hidden;
 }
 
+
+.mars {
+    position: fixed;
+    z-index: 0;
+    left: 0vw;
+    width: 100vw;
+    height: auto;
+    background: #000000;
+    }
+    
+
 h1 {
+    z-index: 1;
     padding: 20px;
     font-family: Roboto;
     text-align: center;
@@ -19,14 +33,10 @@ h1 {
     text-decoration-style: wavy;
 }
 
-footer {
-    text-align: center;
-    font-size: 10px;
-    color: rgb(206, 185, 226);
-    padding: 50px;
-}
 
 .gird {
+    flex: none;
+    z-index: 2;
     display: grid;
     align-items: baseline;
     grid-template-columns: auto auto;
@@ -35,6 +45,17 @@ footer {
     justify-items: center;
 }
 
+
+
+footer {
+    flex: none;
+    z-index: 3;
+    text-align: center;
+    font-size: 10px;
+    color: rgb(206, 185, 226);
+    padding: 50px;
+    z-index: 3;
+}
 
 .button {
     width: 200px;
@@ -53,7 +74,7 @@ footer {
     font-family: Roboto;
 }
 .button:hover {
-	background-color: rgb(30, 8, 51);
+	background-color: rgba(0,0,0,0.3);
 }
 .button:activate {
 	position:relative;

@@ -10,55 +10,68 @@
 
 <body>
     <!-- background -->
-    <img src="images/mars.png" alt="" class="mars">
-    
-    <!-- main components -->
-    <div class="scrollableArea">
-        <div class='grid'>
-            <!-- If you wish to remove the container div also remember to modify dragDrop() and dragStart() in ReplaceSamples.js -->
-            <div class="container" id="container_0">
-                <div class="projectName"></div>
-                <div class="uploadButton" id="uploadButton_0">
-                    <div class="plus">+</div>
-                    <div class="text">Base project</div>
-                    <input type="file" accept=".ssp" id="readFileButton_0"/>
-                </div>
-                <div class="deckLayout" id="deckLayout_0">
-                </div>
-            </div>
-            <div class="container" id="container_1">
-                <div class="projectName"></div>
-                <div class="uploadButton" id="uploadButton_1">
-                    <div class="plus">+</div>
-                    <div class="text"></div>
-                    <input type="file" accept=".ssp" id="readFileButton_1"/>
-                </div>
-                <div class="deckLayout" id="deckLayout_1">
-                </div>
-            </div>
-            <div id="uploadMoreButton">
-                Upload more
-                <input type="file" accept=".ssp, .zip" id="readFileButton_more"/>
-            </div>
-            <div id="mergeButton">Merge</div>
-        </div>
-    </div>
-        
+    <img src="images/mars.svg" alt="" class="mars">
+
 
     <!-- graphics -->
     <div class="leftTorch"></div>
     <div class="rightTorch"></div>
+    
+    <div class="layout">
+        <!-- top menu -->
+        <div class="topbar">
+            <h1 class="title">Replace Deck Samples</h1>
+            <div class="menu">
+                <button id="undoButton">undo</button>
+                <button id="resetButton">reset</button>
+                <button id="guideButton">guide</button>
+                <a id="homeButton" href="index.html">home</a>
+            </div>
+        </div>
+        
+        <!-- message -->
+        <div class="horizontalCenter">
+            <div id="message" class="message">
+                <img src="images/CloseButton.svg" id="closeMessageButton" class="closeButton" alt='close message button'>
+                <p>This tool allows you to transfer the deck source (including deck settings) from one project to another. <br><br> Note that only the same type of deck is transferrable(eg. Drum -> Drum).</p>
+            </div>
+        </div>
 
-    <!-- top menu -->
-    <div class="topbar">
-        <h1 class="title">Replace Deck Samples</h1>
-        <div class="menu">
-            <button id="undoButton">undo</button>
-            <button id="resetButton">reset</button>
-            <button id="guideButton">guide</button>
-            <a id="homeButton" href="index.html">home</a>
+        <!-- main components -->
+        <div class="scrollableArea">
+            <div class='grid'>
+                <!-- If you wish to remove the container div also remember to modify dragDrop() and dragStart() in ReplaceSamples.js -->
+                <div class="container" id="container_0">
+                    <div class="projectName"></div>
+                    <div class="uploadButton" id="uploadButton_0">
+                        <div class="plus">+</div>
+                        <div class="text">Base project</div>
+                        <input type="file" accept=".ssp" id="readFileButton_0"/>
+                    </div>
+                    <div class="deckLayout" id="deckLayout_0">
+                    </div>
+                </div>
+                <div class="container" id="container_1">
+                    <div class="projectName"></div>
+                    <div class="uploadButton" id="uploadButton_1">
+                        <div class="plus">+</div>
+                        <div class="text"></div>
+                        <input type="file" accept=".ssp" id="readFileButton_1"/>
+                    </div>
+                    <div class="deckLayout" id="deckLayout_1">
+                    </div>
+                </div>
+                <div id="uploadMoreButton">
+                    Upload more
+                    <input type="file" accept=".ssp, .zip" id="readFileButton_more"/>
+                </div>
+                <div id="mergeButton">Merge</div>
+            </div>
         </div>
     </div>
+            
+
+
         
     <!-- hidden guide window -->
     <div id="guideWindow">

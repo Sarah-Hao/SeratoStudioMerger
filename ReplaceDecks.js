@@ -8,6 +8,7 @@
 // - replace style = "x:xxx"; with style.x = "xxx";
 // - fix variables with no keyword declaration
 // - fix drop precision problem ( @000001 )
+// - Update based on new .ssp file format ( @000002 )
 //
 //
 // - support changing base project
@@ -67,6 +68,7 @@ let refeProjectUploaded;
 
 let mergeactivated = false;
 let guideShown = false;
+let messageShown = true;
 
 
 // This variable is used to support undo function.
@@ -121,10 +123,14 @@ function drawDecks(layout, project, projectNum){
     // ---------------------------------------------
     // projectNum = 0 means this is a base project
     // projectNum = 1+ mean this is a refe project
-    for (let i = 0 ; i < project.decks.length; i++) {
+
+    // new .ssp project uses 'scene_decks' instead of 'scene', relates to problem @000002
+    const decks = project.decks == undefined ? project.scene_decks : project.decks;
+    console.log("[drawDecks] ", decks);
+    for (let i = 0 ; i < decks.length; i++) {
         // get the deck info
-        const deckName = project.decks[i].name;
-        const deckType = project.decks[i].type;
+        const deckName = decks[i].name;
+        const deckType = decks[i].type;
         deckSource = null;
 
         // copy a deckArea element，and un-hide it
@@ -519,8 +525,9 @@ function merge() {
 
     // modify the copy
     for (let i = 0 ; i < deckLayout_0.children.length ; i++) {
+        
         const deck = deckLayout_0.children[i].querySelector('.deck:last-child');
-        const deckArea = deckLayout_0.children[i];
+        console.log('[merge] deck', deck);
         if (deck) {
             // We detect a change if either:
             // 1. the deck's project is NOT base project
@@ -528,8 +535,17 @@ function merge() {
             if (deck.data.projectNum != 0 || deck.data.deckNum != i) {
                 projectNum = deck.data.projectNum;
                 deckNum = deck.data.deckNum;
-                console.log("Detected change in deckArea", i, ", to be replaced with deck", deckNum, "from project", projectNum);
-                mergeProject.decks[i] = refeProject[projectNum-1].decks[deckNum];
+                
+                // accept two possible name while find project decks ('decks' and 'scene_decks'), relates to problem @000002.
+                if (mergeProject.decks != undefined) {
+                    mergeProject.decks[i] = refeProject[projectNum-1].decks != undefined ? refeProject[projectNum-1].decks[deckNum] : refeProject[projectNum-1].scene_decks[deckNum];
+                }
+                else if (mergeProject.scene_decks != undefined) {
+                    mergeProject.scene_decks[i] = refeProject[projectNum-1].decks != undefined ? refeProject[projectNum-1].decks[deckNum] : refeProject[projectNum-1].scene_decks[deckNum];
+                }
+                else {
+                    console.log("Base project missing an attribute called 'decks' or 'scene_decks'. ");
+                }
             }
         }
     }
@@ -537,7 +553,7 @@ function merge() {
     // download the copy
     let filename = baseProjectName[0].substring(0, 3) + "_X_" + refeProjectName[0].substring(0, 3) + ".ssp";
     console.log("download ", filename);
-    download(filename, JSON.stringify(mergeProject));
+    download(filename, JSON.stringify(mergeProject, null, '\t'));
 };
 
 function download(filename, data) {
@@ -592,10 +608,14 @@ const resetButton = document.getElementById("resetButton");
 const guideButton = document.getElementById("guideButton");
 const guideWindow = document.getElementById("guideWindow");
 const closeGuideButton = document.getElementById("closeGuideButton");
+const message = document.getElementById("message");
+const closeMessageButton = document.getElementById("closeMessageButton");
+
 
 
 guideButton.addEventListener('click', guide);
 closeGuideButton.addEventListener('click', closeGuide);
+closeMessageButton.addEventListener('click', closeMessage);
 
 function activateUndo() {
     undoButton.style = "opacity:1;";
@@ -620,7 +640,7 @@ function deactivateReset() {
 function undo() {
     console.log("[undo] button clicked");
     if (actionList.length == 0) {
-        alert("Nothing to undo. \n\n If you wish to undo uploading a project, please refresh the page :)");
+        showMessage("Nothing to undo. \n\n If you wish to undo uploading a project, please refresh the page :)");
         return;
     }
 
@@ -647,4 +667,14 @@ function guide() {
 
 function closeGuide() {
     guideWindow.style = "visibility:hidden;"; guideShown = false;
+}
+
+function closeMessage() {
+    message.style = "display: none;"; messageShown = false;
+}
+
+function showMessage(text) {
+    message.querySelector('p').innerText = text;
+    console.log('[message]', message.querySelector('p').innerText);
+    message.style = "display: flex;"; messageShown = true;
 }
