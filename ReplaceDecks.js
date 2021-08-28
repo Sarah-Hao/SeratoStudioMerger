@@ -526,13 +526,13 @@ function merge() {
     // modify the copy
     for (let i = 0 ; i < deckLayout_0.children.length ; i++) {
         
-        const deck = deckLayout_0.children[i].querySelector('.deck:last-child');
-        console.log('[merge] deck', deck);
+        const deck = deckLayout_0.children[i].querySelector('.deck');
         if (deck) {
             // We detect a change if either:
             // 1. the deck's project is NOT base project
             // 2. the deck num does NOT equal to the deckArea num
             if (deck.data.projectNum != 0 || deck.data.deckNum != i) {
+                console.log('[merge] detect change in deck', deck);
                 projectNum = deck.data.projectNum;
                 deckNum = deck.data.deckNum;
                 
